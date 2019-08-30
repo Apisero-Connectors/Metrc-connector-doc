@@ -83,11 +83,11 @@ image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc
 * Credentials can be directly entered into the global configuration properties, or reference from a configuration file that contains these values.
   Here we are adding credentials to application properties file and reference it using placeholders.
 
-image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/MetrcConfigDetails.PNG[]
+image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/MetrcConfig.PNG[]
 
 * Make a *Test Connection...* to check that the configuration is correct.
 
-image::https://github.com/Apisero-Connectors/Connector-doc/blob/master/doc/images/TestConnection.PNG[]
+image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/TestConnection.PNG[]
 
 * On success, configuration is ready to use!
 
@@ -103,7 +103,7 @@ image::https://github.com/Apisero-Connectors/Connector-doc/blob/master/doc/image
 
 
 == ​To Create a Mule Project in Anypoint Studio 7
-The SAP Hybris OCC connector is an operation-based connector, which means that when you add the connector to your flow, you need to configure a specific operation the connector is intended to perform. Below is the "Get Active Packages" operation for better understanding
+The Metrc connector is an operation-based connector, which means that when you add the connector to your flow, you need to configure a specific operation the connector is intended to perform. Below is the "Get Active Packages" operation for better understanding
 
 * Create new Mule Application in Studio and configure *HTTP Listener* to port 8080.
 
@@ -115,7 +115,7 @@ image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc
 
 * Select *'Get Active Packages'* operation from Metrc connector, drag & drop it into canvas. Click on Get Active Packages operation.
 
-image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/getActivePackageParameterWithoutDetails.PNG[]
+image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/getActivePackageParametersWithoutDetails.PNG[]
 
 * Select Hybris configuration from drop down which was already configured previously in global elements, or if required new configuration can be added by clicking green plus (+) symbol.
 
