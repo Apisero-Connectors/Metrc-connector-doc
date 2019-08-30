@@ -66,7 +66,7 @@ you can click to install the update. After updating, update Maven pom.xml file d
 * In the Global Mule Configuration Elements screen, click *Create*.
 * In the Choose Global Type wizard, collapse connector configuration and select *'Metrc_config'* and click OK.
 
-image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/MetrcConfig.png[]
+image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/MetrcConfig.PNG[]
 
 * The configuration parameters to configure is
 
@@ -83,11 +83,11 @@ image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc
 * Credentials can be directly entered into the global configuration properties, or reference from a configuration file that contains these values.
   Here we are adding credentials to application properties file and reference it using placeholders.
 
-image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/MetrcConfigDetails.png[]
+image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/MetrcConfigDetails.PNG[]
 
 * Make a *Test Connection...* to check that the configuration is correct.
 
-image::https://github.com/Apisero-Connectors/Connector-doc/blob/master/doc/images/TestConnection.png[]
+image::https://github.com/Apisero-Connectors/Connector-doc/blob/master/doc/images/TestConnection.PNG[]
 
 * On success, configuration is ready to use!
 
@@ -107,24 +107,24 @@ The SAP Hybris OCC connector is an operation-based connector, which means that w
 
 * Create new Mule Application in Studio and configure *HTTP Listener* to port 8080.
 
-image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/HttpListnerConfig.png[]
+image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/HttpListnerConfig.PNG[]
 
 * Add "/getActivePackages" path to test the flow.
 
-image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/HttpListnerPath.png[]
+image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/HttpListnerPath.PNG[]
 
 * Select *'Get Active Packages'* operation from Metrc connector, drag & drop it into canvas. Click on Get Active Packages operation.
 
-image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/getActivePackageParameterWithoutDetails.png[]
+image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/getActivePackageParameterWithoutDetails.PNG[]
 
 * Select Hybris configuration from drop down which was already configured previously in global elements, or if required new configuration can be added by clicking green plus (+) symbol.
 
-image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/MetrcConfig.png[]
+image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/MetrcConfig.PNG[]
 
 * Make sure to test your connection, if you have add new connection details.
 * Enter user details for *Get Active Packages* operation and save.
 
-image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/getActivePackageParameterWithDetails.png[]
+image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/getActivePackageParameterWithDetails.PNG[]
 
 * Drag & drop *Transform Message* from Mule Palette, drag and drop it next to Hybris Connector. Use the below DataWeave snippet to transform the response.
 ```
@@ -137,7 +137,7 @@ payload
 * Save the Mule project.
 * Complete flow looks as below.
 
-image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/getActivePackagesFlow.png[]
+image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/getActivePackagesFlow.PNG[]
 * Run the project as a Mule Application by right-clicking the project name in the Package Explorer, selecting Run As > Mule Application.
 * Open Postman and check the response after entering the URL *http://localhost:8080/getActivePackages*. You should see the package details associated with the license number you queried with.
 
