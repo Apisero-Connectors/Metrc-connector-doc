@@ -28,6 +28,7 @@ The Metrc Connector is compatible with these software versions:
 * Sales     : Create receipts for sales
 * Sales     : Update receipts for sales
 * Sales     : Delete receipts by receipts id
+* Sales     : Get Sales Receipts
 
 === Version 1.0.0 - Fixed in This Release
 First version.
