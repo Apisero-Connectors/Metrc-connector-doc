@@ -117,16 +117,16 @@ image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc
 
 image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/getActivePackageParametersWithoutDetails.PNG[]
 
-* Select Hybris configuration from drop down which was already configured previously in global elements, or if required new configuration can be added by clicking green plus (+) symbol.
+* Select Metrc configuration from drop down which was already configured previously in global elements, or if required new configuration can be added by clicking green plus (+) symbol.
 
 image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/MetrcConfig.PNG[]
 
 * Make sure to test your connection, if you have add new connection details.
-* Enter user details for *Get Active Packages* operation and save.
+* Enter required details for *Get Active Packages* operation and save.
 
 image::https://github.com/Apisero-Connectors/Metrc-connector-doc/blob/master/doc/images/getActivePackageParameterWithDetails.PNG[]
 
-* Drag & drop *Transform Message* from Mule Palette, drag and drop it next to Hybris Connector. Use the below DataWeave snippet to transform the response.
+* Drag & drop *Transform Message* from Mule Palette, drag and drop it next to Metrc Connector. Use the below DataWeave snippet to transform the response.
 ```
 %dw 2.0
 output application/json
