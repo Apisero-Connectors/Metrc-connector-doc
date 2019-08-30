@@ -1,0 +1,40 @@
+= Metrc Connector Release Notes
+
+August 2019
+
+_MuleSoft Certified_
+
+Metrc Connector provides Mule users a quick and easy way to integrate with Metrc API end points.
+
+== Version 1.0.0 - August 2019
+This release of Metrc Connector is compatibile with Mule 4 and it is not compatible with Mule 3 versions.
+
+=== Version 1.0.0 - Compatibility
+The Metrc Connector is compatible with these software versions:
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Anypoint Studio |7 and later
+|Mule |4 and later
+|JDK |1.8.x
+|===
+
+=== Version 1.0.0 - Features
+
+* Metrc connector is compatible with Mule 4
+* Packages  : Get active packages
+* Transfers : Get incoming transfers
+* Sales     : Create receipts for sales
+* Sales     : Update receipts for sales
+* Sales     : Delete receipts by receipts id
+
+=== Version 1.0.0 - Fixed in This Release
+First version.
+
+== See Also
+* https://www.mulesoft.com/legal/versioning-back-support-policy#anypoint-connectors[Anypoint Connectors Support Policy]
+* https://github.com/Apisero-Connectors/Connector-doc/blob/master/doc/user-manual.adoc[​User Manual]
+* https://forums.mulesoft.com[MuleSoft Forum]
+* https://support.mulesoft.com[Contact MuleSoft Support]
+ 

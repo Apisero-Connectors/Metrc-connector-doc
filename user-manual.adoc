@@ -1,0 +1,167 @@
+= Metrc Connector
+
+MuleSoft Certified
+
+== About Metrc
+
+The Metrc system was developed in accordance with the State and the State’s rules andregulations governing the Marijuana Industry. The State is tasked with the regulation of the State's two marijuana industries (Medical and Retail), the State is responsible for providing the rules under which these industries are expected to operate. All rules are written in response to the direction and authority provided by state statute. These rules are put in place in accordance with the State's rules and regulations. For specific questions regarding rules and regulations Metrc users should refer to the State. Operational questions regarding Metrc can be addressed with Metrc LLC.
+
+Please note the State has made several rules with regards to who may and may not access the Metrc system. The regulations define many aspects of the responsibility of who is allowed in Metrc, what they are allowed to do while in the Metrc system and what they are responsible for when they have entered information into the Metrc system. The Metrc manual is a reference tool for those people who are lawfully allowed to actively use the system and have received proper credentials under the enforcement division's rules and regulations. It is assumed that all users of the Metrc manual have read, understand and are compliant with these rules and regulations.
+
+
+== About Metrc Connector
+
+Metrc Anypoint Connector provides Mule users a quick and easy way to integrate with Metrc.
+
+This user guide details the compatibility, prerequisites, configuring the connector, operations supported by the connector and common use cases for the Metrc connector.
+
+MuleSoft maintains the Metrc connector under the MuleSoft Certified Category support policy.
+
+== Prerequisites
+This document assumes that you are familiar with Mule, Anypoint Connectors,
+Anypoint Studio Essentials, Mule flows, and Mule Global Elements.
+
+To use Metrc connector, you need
+
+* Anypoint Studio version 7.
+* Metrc
+* Credentials to access to Metrc back-office.
+
+=== Mule Compatibility
+
+[width="100%", options="header"]
+|=======
+|Application/Service |Version
+|Mule Runtime |4 and later
+|Anypoint Studio | 7 and later
+|=======
+
+== What's New in this Connector
+
+* Metrc connector 1.0.0 is compatible with Mule 4.
+
+== To Install this Connector in Anypoint Studio 7
+You can use Metrc connector in Anypoint Studio by adding it as a dependency in your Mule application.
+
+. Open your Mule project in Anypoint Studio.
+. Add the connector as a dependency in the pom.xml file:
+
+```
+<dependency>
+	<groupId>com.mulesoft.connectors</groupId>
+	<artifactId>mule-metrc-connector</artifactId>
+	<version>1.0.0</version>
+	<classifier>mule-plugin</classifier>
+</dependency>
+```
+
+When Studio has an update, a message displays in the lower right corner, which
+you can click to install the update. After updating, update Maven pom.xml file dependencies to the new version.
+
+
+== Configure in Studio
+
+=== To Configure the Connector Using Basic Auth
+* After adding connector dependency to Mule project, click on *Global Elements* tab at the base of the canvas.
+* In the Global Mule Configuration Elements screen, click *Create*.
+* In the Choose Global Type wizard, collapse connector configuration and select *'Metrc_config'* and click OK.
+
+image::https://github.com/Apisero-Connectors/Metrc-Connector-doc/blob/master/doc/images/MetrcConfig.png[]
+
+* The configuration parameters to configure is
+
++
+[options="header",width="50%"]
+|============
+|Field Name   |Value
+|Address      |https://metrcdomain
+|UserName     |Username Provided by Metrc
+|Password     |Password Provided by Metrc
+|============
++
+
+* Credentials can be directly entered into the global configuration properties, or reference from a configuration file that contains these values.
+  Here we are adding credentials to application properties file and reference it using placeholders.
+
+image::https://github.com/Apisero-Connectors/Metrc-Connector-doc/blob/master/doc/images/MetrcConfigDetails.png[]
+
+* Make a *Test Connection...* to check that the configuration is correct.
+
+image::https://github.com/Apisero-Connectors/Connector-doc/blob/master/doc/images/TestConnection.png[]
+
+* On success, configuration is ready to use!
+
+* Metrc_config configuration should look like below in Configuration XML:
++
+```xml
+	<metrc:config name="Metrc_Config" doc:name="Metrc Config" doc:id="01f9ed97-cd41-41f6-8b3e-d620fe3ce5cd" address="${metrc.baseURL}" >
+		<metrc:connection username="${metrc.username}" password="${metrc.password}" />
+	</metrc:config>
+```
+
+* *Note* For getting username and Password you need to contact Metrc.
+
+
+== ​To Create a Mule Project in Anypoint Studio 7
+The SAP Hybris OCC connector is an operation-based connector, which means that when you add the connector to your flow, you need to configure a specific operation the connector is intended to perform. Below is the "Get Active Packages" operation for better understanding
+
+* Create new Mule Application in Studio and configure *HTTP Listener* to port 8080.
+
+image::https://github.com/Apisero-Connectors/Metrc-Connector-doc/blob/master/doc/images/HttpListnerConfig.png[]
+
+* Add "/getActivePackages" path to test the flow.
+
+image::https://github.com/Apisero-Connectors/Metrc-Connector-doc/blob/master/doc/images/HttpListnerPath.png[]
+
+* Select *'Get Active Packages'* operation from Metrc connector, drag & drop it into canvas. Click on Get Active Packages operation.
+
+image::https://github.com/Apisero-Connectors/Metrc-Connector-doc/blob/master/doc/images/getActivePackageParameterWithoutDetails.png[]
+
+* Select Hybris configuration from drop down which was already configured previously in global elements, or if required new configuration can be added by clicking green plus (+) symbol.
+
+image::https://github.com/Apisero-Connectors/Metrc-Connector-doc/blob/master/doc/images/MetrcConfig.png[]
+
+* Make sure to test your connection, if you have add new connection details.
+* Enter user details for *Get Active Packages* operation and save.
+
+image::https://github.com/Apisero-Connectors/Metrc-Connector-doc/blob/master/doc/images/getActivePackageParameterWithDetails.png[]
+
+* Drag & drop *Transform Message* from Mule Palette, drag and drop it next to Hybris Connector. Use the below DataWeave snippet to transform the response.
+```
+%dw 2.0
+output application/json
+---
+payload
+
+```
+* Save the Mule project.
+* Complete flow looks as below.
+
+image::https://github.com/Apisero-Connectors/Metrc-Connector-doc/blob/master/doc/images/getActivePackagesFlow.png[]
+* Run the project as a Mule Application by right-clicking the project name in the Package Explorer, selecting Run As > Mule Application.
+* Open Postman and check the response after entering the URL *http://localhost:8080/getActivePackages*. You should see the package details associated with the license number you queried with.
+
+
+=== To Create a Mule Project Using XML
+* Create new Mule Application
+* Click on Configuration XML tab at the base of the canvas.
+* Copy below code and paste it.
+* Below code is for Get Active Packages operation.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:metrc="http://www.mulesoft.org/schema/mule/metrc" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/metrc http://www.mulesoft.org/schema/mule/metrc/current/mule-metrc.xsd">
+	<flow name="getActivePackagesFlow" doc:id="058616b7-a05a-4ee8-a19a-2cc26ddc544d" >
+		<http:listener doc:name="8081/getActivePackages" doc:id="8046fa96-92f4-4ccf-b2ca-4795f4566283" config-ref="HTTP_Listener_config" path="/getActivePackages"/>
+		<metrc:get-active-packages doc:name="Get Active Packages" doc:id="3ba0ff8c-9788-4fad-82ef-0e12169ec972" config-ref="Metrc_Config" licenseNumber="#[attributes.queryParams.licenseNumber]" lastModifiedStart="#[attributes.queryParams.lastModifiedStart]" lastModifiedEnd="#[attributes.queryParams.lastModifiedEnd]"/>
+	</flow>
+</mule>
+```
+
+== See Also 
+* https://github.com/Apisero-Connectors/Metrc-Connector-doc/blob/master/doc/release-notes.adoc[​Metrc Connector Release Notes]
