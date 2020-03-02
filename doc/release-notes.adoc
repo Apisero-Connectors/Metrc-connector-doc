@@ -1,12 +1,12 @@
 = Metrc Connector Release Notes
 
-August 2019
+February 2020
 
 _MuleSoft Certified_
 
 Metrc Connector provides Mule users a quick and easy way to integrate with Metrc API end points.
 
-== Version 1.0.0 - August 2019
+== Version 1.0.0 - 28th February 2020
 This release of Metrc Connector is compatibile with Mule 4 and it is not compatible with Mule 3 versions.
 
 === Version 1.0.0 - Compatibility
