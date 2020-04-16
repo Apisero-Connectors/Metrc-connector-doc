@@ -6,6 +6,35 @@ _MuleSoft Certified_
 
 Metrc Connector provides Mule users a quick and easy way to integrate with Metrc API end points.
 
+== Version 2.0.0 - 20 April 2020
+This release of Metrc Connector is compatibile with Mule 4 and it is not compatible with Mule 3 versions.
+
+=== Version 2.0.0 - Compatibility
+The Metrc Connector is compatible with these software versions:
+
+[%header%autowidth.spread]
+|===
+|Software |Version
+|Anypoint Studio |7 and later
+|Mule |4 and later
+|JDK |1.8.x
+|===
+
+=== Version 2.0.0 - Features
+
+* Added 7 more operations to the version 2.0.0
+
+* Packages  : Create Packages
+* Packages  : Adjust Packages
+* Packages  : Finish Packages
+* Packages  : Unfinish Packages
+* Transfers : Get Outgoing Transfers
+* Transfers : Update Transfers Template
+* Transfers : Create Transfers Template
+
+=== Version 2.0.0 - Fixed in This Release
+Second version. Added 7 more operations to the version 2.0.0 and also done performance tuning.
+
 == Version 1.0.0 - 28th February 2020
 This release of Metrc Connector is compatibile with Mule 4 and it is not compatible with Mule 3 versions.
 
