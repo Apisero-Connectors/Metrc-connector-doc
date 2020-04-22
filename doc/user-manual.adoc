@@ -59,6 +59,27 @@ When Studio has an update, a message displays in the lower right corner, which
 you can click to install the update. After updating, update Maven pom.xml file dependencies to the new version.
 
 
+* Metrc connector 2.0.0 is compatible with Mule 4.
+
+== To Install this Connector in Anypoint Studio 7
+You can use Metrc connector in Anypoint Studio by adding it as a dependency in your Mule application.
+
+. Open your Mule project in Anypoint Studio.
+. Add the connector as a dependency in the pom.xml file:
+
+```
+<dependency>
+	<groupId>com.mulesoft.connectors</groupId>
+	<artifactId>mule-metrc-connector</artifactId>
+	<version>2.0.0</version>
+	<classifier>mule-plugin</classifier>
+</dependency>
+```
+
+When Studio has an update, a message displays in the lower right corner, which
+you can click to install the update. After updating, update Maven pom.xml file dependencies to the new version.
+
+
 == Configure in Studio
 
 === To Configure the Connector Using Basic Auth
